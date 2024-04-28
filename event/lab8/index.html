@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Hide</button>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+
+
+    <script>
+        const button = document.querySelector('button')
+        const tagp = document.querySelector('p')
+
+        button.addEventListener('click', () => {
+            if (button.textContent == 'Hide') {
+                button.textContent = "show"
+                tagp.style.display = 'none'
+            } else {
+                button.textContent = "Hide"
+                tagp.style.display = 'block'
+            }
+
+        })
+    </script>
+</body>
+
+</html>

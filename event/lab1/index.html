@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button>0</button>
+
+<body>
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', () => alert('1')); // (1) แสดงเลข 1
+        button.removeEventListener('click', () => alert('1')); // (2) เอาเลย 1ออก
+        button.onclick = () => alert(2); // (3) เมื่อคลิกให้เเสดง 2
+    </script>
+</body>
+
+</html>

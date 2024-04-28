@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <label for="province">Province :</label>
+    <select id="province" name="province">
+      <option value="Select" selected hidden>Select</option>
+      <option value="bangkok">Bangkok</option>
+      <option value="chiangMai">Chiang Mai</option>
+      <option value="chonburi">Chonburi</option>
+      <option value="phuket">Phuket</option>
+    </select>
+    <br />
+    <br />
+    <label for="district">District:</label>
+    <select id="district" name="district">
+      <option value="Select" selected hidden>Select</option>
+    </select>
+    <script>
+      const province = document.getElementById("province");
+      const district = document.getElementById("district");
+      let data = [];
+      const choseProvince = (event) => {
+        district.innerHTML = `\n <option value="Select" selected="" hidden="">Select</option>\n`;
+        switch (event.target.value) {
+          case "bangkok":
+            const bangkok = [1, 2, 3];
+            data = bangkok;
+            break;
+          case "chiangMai":
+            const chiangMai = [4, 5, 6];
+            data = chiangMai;
+            break;
+          case "chonburi":
+            const chonburi = [7, 8, 9];
+            data = chonburi;
+            break;
+          case "phuket":
+            const phuket = [31, 32, 33, 34];
+            data = phuket;
+            break;
+        }
+        for (let i of data) {
+          let list = document.createElement("option");
+          list.innerHTML = i;
+          list.value = i;
+          district.append(list);
+        }
+      };
+      province.addEventListener("change", choseProvince);
+    </script>
+  </body>
+</html>
